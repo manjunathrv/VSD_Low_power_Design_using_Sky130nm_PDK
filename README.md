@@ -1,1 +1,1 @@
-# VSD_Low_power_Design_using_Sky130nm_PDK
+# VSD Low power Design using Sky130nm PDK Workshop
