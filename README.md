@@ -93,7 +93,7 @@ An CPU fan used for cooling the processor and its specification is described in 
 The specification describe the following 
 1. Operating voltage of the device - 12V 
 2. The maximum wattage of the CPU to which the Fan can be mounted.
-3. Thermal resistance of the device. A lower thermal resistance indicate that device offers less resistance to heat flow and has the ability to cool CPU faster. 
+3. Thermal resistance of the device. A lower thermal resistance indicate that device offers less resistance to heat flow and has the ability to cool CPU faster.
 
 
 3. Case study 3 - Apple iphone 6 battery issues <br/>
