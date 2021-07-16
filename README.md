@@ -4,13 +4,13 @@
 Table of contents
 =================
 <!--ts-->
-   * [Day 1](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-1)
-      * [Introduction to Low Power Design](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#introduction-to-physical-design-flow)
-      * [Background](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#introduction-to-openlane-flow)
+   * [Day 1](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-1)
+      * [Introduction to Low Power Design](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#introduction-to-low-power-design)
+      * [Background](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#background)
       
-   * [Day 2](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-2)
-      * [Low Power fundamentals](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
-      * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
+   * [Day 2](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-2)
+      * [Low Power fundamentals](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#low-power-fundamentals)
+      * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
    
 <!---   * [Day 3](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-3)
       * [IO placement modification](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
