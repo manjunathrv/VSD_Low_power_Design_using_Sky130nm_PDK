@@ -167,7 +167,7 @@ Some of the multi-voltage control techniques used in various applications are li
 ### Definitions 
 The total power dissipations in a CMOS is mainly divided into static power dissipation and dynamic power dissipation given by the below equations, <br/> 
 <br/> 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" title="Total power = (V_{DD}I_{leak} + C{V_{DD}}^2f_c)" /></a> <br/> 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Total&space;power&space;=&space;\int_{0}^{t}(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)dt" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;Total&space;power&space;=&space;\int_{0}^{t}(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)dt" title="Total power = \int_{0}^{t}(V_{DD}I_{leak} + C{V_{DD}}^2f_c)dt" /></a>
 
 The static power dissipation is the first part of the sum and the dynamic power is defined by the second part of the sum. <br/> 
  
