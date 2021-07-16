@@ -55,7 +55,6 @@ Table of contents
 
 ### Economics of Power/Energy 
 The power and energy consumption in an IC or a system impacts the complete economics of the product. The factors affected are mentioned below, 
-
 1. Performance
 2. Cost 
 3. Weight
@@ -64,29 +63,41 @@ The power and energy consumption in an IC or a system impacts the complete econo
 6. Safety 
 7. Usage of the system (Portable or mobile)
 
-
 ### Power vs Perfomance 
-In the below example, a case study is done to know if the improvement of performance can lead to increase or decrease in power consumption. 
+In the below example, a case study is done to know if the improvement of performance can lead to increase or decrease in power consumption.<br/> 
+Consider a a display monitor having 1920x1080 (~2M pixels) processed at 120Hz/60Hz <br/>
+Case 1 - Consider a 1.8V processor at 120Hz, 240Mhz  <br/>
+The power consumption = 1.8^2 * 240 = 3.24 W <br/>
+Case 2 - Consider a  1.2V processor at 60Hz, 120Mhz  <br/>
+The power consumption = 1.2^2 * 120Mhz = 1.44W<br/>
+Improving the performance does leads to higher power consumption. 
 
 
 ### Comparison between systems - Portable, Mobile and Mobility  
 | Portable                          | Mobile                | Mobility |
 |--------------------------------|-----------------------|----------------|
-| Heat generated in the IC/system increases | Finite packed resource depletes faster | Finite packed resource depletes faster |
-| Requirement of better heat sink/fan       | Cost increases with energy consumption  | Finite packed resource depletes faster |
-| Frequency gets capped resulting in decrease in performance | Systemic Metric  | Finite packed resource depletes faster |                           
+| Needs electricity and could run on battery | Runs on battery | change in service and uses cases in a mobile |
+| Ex Laptop     | Eg Smartphone, Tablet | Phone with 4G/5G services|
+                           
 
 ### Assignment 
 1. Case study 1 - Galaxy note explosion issue <br/>
-Some of the main reasons are due to bad design of battery electrodes and packaging. https://www.bbc.com/news/business-38714461 <br/>
+Some of the main reasons are due to bad design of battery electrodes and insufficent insulation in packaging. https://www.bbc.com/news/business-38714461 <br/>
+The below image shows that the negative electrodes in the battery was deflected in the upper right corner due to insufficient space leading to shorting of the electrodes.<br/>  
+<img src="Images/Day_1_1b.PNG" width="600"> <br/> 
+
+2. Case study 2 - CPU Fan specifications 
+An CPU fan used for cooling the processor and its specification is described in the image below, <br/>
+<img src="Images/Day_1_1c.PNG" width="800"> <br/> 
+
+The specification describe the following 
+1. Operating voltage of the device - 12V 
+2. The maximum wattage of the CPU to which the Fan can be mounted.
+3. Thermal resistance of the device. A lower thermal resistance indicate that device offers less resistance to heat flow and has the ability to cool CPU faster. 
 
 
-
-
-2. Case study 2 - 
-
-
-3. Case study 3 - Apple battery issues
+3. Case study 3 - Apple iphone 6 battery issues <br/>
+The main reason stated by apple for the slowing down of performance to compensate the degration and lifetime of battery  https://www.theverge.com/2017/12/28/16827248/apple-iphone-battery-replacement-price-slow-down-apology
 
 
 ## Background
@@ -154,8 +165,10 @@ Some of the multi-voltage control techniques used in various applications are li
 
 ## Low Power fundamentals
 ### Definitions 
-The total power dissipations in a CMOS is mainly divided into static power dissipation and dynamic power dissipation given by the below equations, 
+The total power dissipations in a CMOS is mainly divided into static power dissipation and dynamic power dissipation given by the below equations, <br/> 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" title="Total power = (V_{DD}I_{leak} + C{V_{DD}}^2f_c)" /></a>
 
+The leakage power is the first part of the sum and the dynamic power is defined by the second part of the sum. <br/> 
  
 
 ### Power distribution during an operation in an SOC mobile processor
@@ -172,7 +185,7 @@ Some blocks such as serial IOs, DFT, WCDMA are not used during the video call ap
 The below charts shows the distribution of power consumption under various application and scenraios, <br/> 
 Reference - Power Consumption Breakdown on a Modern Laptop - Aqeel Mahesri and Vibhore Vardhan <br/> 
 
-<img src="Images/Day_2_3a.PNG" width="600"> <br/> 
+<img src="Images/Day_2_3a.PNG" width="800"> <br/> 
 
 From the above power analysis it can be seen that the power consumption is greatly depend on the activity in the laptop.<br/> 
 For example PCMark CPU test has the highest power consumption in comparison or Audio CD playback modes. <br/>
@@ -186,11 +199,11 @@ The most important parameters that needs to be consider during balancing the pow
 
 | Parameter   | Description |
 |--------------------------------|-----------------------|
-| Density | Divide the blocks into static multiple voltages |
-| Delivery | Shut down logic not in use by placing a switch (power gating transistor) |
-| Leakage  | Variant of power gating that to retain the state | 
-| Reliability | VRET|
+| Density | Defined by Power/Area indicates thermal power dissipated over an area.<br/>  The power consumed is a function of junction temperature. |
+| Delivery | Managing the current I and change in current dI for the operating voltage of the IC |
+| Leakage  | Leakage power is due power consumption of the subthreshold current during idle or active state in the transistor.<br/>  Leakage increases with gate size. | 
+| Reliability | Reach the constraint to be within material degration limit by electromigration and Average power over time|
 
-
+## Voltage Control Techniques
 
 
