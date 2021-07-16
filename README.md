@@ -12,7 +12,7 @@ Table of contents
       * [Low Power fundamentals](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
       * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
    
-   * [Day 3](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-3)
+<!---   * [Day 3](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-3)
       * [IO placement modification](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
       * [VSD CMOS Inverter Cell](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
       * [Spice simulation of the VSD CMOS Inverter Cell](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#spice-simulation-of-the-vsd-cmos-inverter-cell)
@@ -30,7 +30,7 @@ Table of contents
   
    * [Workshop Learning Outcomes](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#workshop-learning-outcomes)
 
-   * [Acknowledgement](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#acknowledgements)
+   * [Acknowledgement](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#acknowledgements)---|>
 
 <!--te-->
 
@@ -60,7 +60,7 @@ The power and energy consumption in an IC or a system impacts the complete econo
 2. Cost 
 3. Weight
 4. Form factor
-5. Overall functinality
+5. Overall functionality
 6. Safety 
 7. Usage of the system (Portable or mobile)
 
@@ -77,13 +77,16 @@ In the below example, a case study is done to know if the improvement of perform
 | Frequency gets capped resulting in decrease in performance | Systemic Metric  | Finite packed resource depletes faster |                           
 
 ### Assignment 
-1. Case study 1 
+1. Case study 1 - Galaxy note explosion issue <br/>
+Some of the main reasons are due to bad design of battery electrodes and packaging. https://www.bbc.com/news/business-38714461 <br/>
 
 
-2. Case study 2 
 
 
-3. Case study 3 
+2. Case study 2 - 
+
+
+3. Case study 3 - Apple battery issues
 
 
 ## Background
@@ -101,48 +104,93 @@ Basic concepts are refreshed
 The different operating conditions in a CMOS combinational and sequential circuit based on the rise and fall time are mentioned below, 
 
 | Parameter   | Combinational Logic | Sequential Logic |
-|--------------------------------|-----------------------|
+|--------------------------------|-----------------------|----------|
 | Shutdown | OFF | OFF |
 | Standby  | ON  | Reads are allowed no writes |
 | Active  | ON | Read and write are allowed |
 
 ### 7 degrees of Voltage Control in a CMOS device
-The below figure is an example of a CMOS inverter with nodes that can be used for a low power design 
+The below figure is an example of a CMOS inverter with Voltage nodes that can be used for a low power design 
 
-<img src="Images/Day_1_1a.png" width="600"> <br/> 
+<img src="Images/Day_1_2.PNG" width="600"> <br/> 
 
-| Name   | Nodes |
-|--------------------------------|-----------------------|
+| Name   | Voltage Nodes |
+|--------|---------|
 | Power gating  | SLPP, SLPN |
 | Voltage scaling  | VDD,VSS |
 | Back Biasing  | VBBP,VBBN | 
 | State Retention | VRET|
 
-### Multi-Vdd Voltage control 
+### Voltage control techniques
+The various techniques for voltage control in a CMOS IC design are descirbed in the below figure ,
 
-<img src="Images/Day_1_3.png" width="600"> <br/> 
+<img src="Images/Day_1_3.PNG" width="600"> <br/> 
 
-| Name   | Nodes |
+<br/>
+
+| Name   | Description |
 |--------------------------------|-----------------------|
-| Power gating  | SLPP, SLPN |
-| Voltage scaling  | VDD,VSS |
-| Back Biasing  | VBBP,VBBN | 
-| State Retention | VRET|
+| Multi Vdd (MVV)  | Divide the blocks into static multiple voltages |
+| MTCMOS power gating  | Shut down logic not in use by placing a switch (power gating transistor) |
+| Power gating with state retention  | Variant of power gating that to retain the state | 
+| Dynamic or adaptive Voltage frequency scaling (DVS, DVFS, AVS, AVFS) | VRET|
+| Variable Vth | Done by Back bias of PMOS/NMOS (for memory)|
+| Low VDD standby | Blocks not in use reduce the voltage to retain the state|
 
-### Power design in some basic devices 
+### Multi-voltage control techniques in some applications 
+Some of the multi-voltage control techniques used in various applications are listed below, <br/>
 
-| Name   | Nodes |
-|--------------------------------|-----------------------|
-| Power gating  | SLPP, SLPN |
-| Voltage scaling  | VDD,VSS |
-| Back Biasing  | VBBP,VBBN | 
-| State Retention | VRET|
-
+| Application   | Concerns  | Mult-Voltage control techniques | 
+|---------|------------|------------|
+| Audio  | Battery life | Power Gating |
+| Video  | Active, Idle | DVFS, Standby, Power Gating |
+| GPS  | Response, Battery life |  Power Gating |
+| W/S. Server | Perfomance, Heat | DVFS, Multi-VDD |
+| Laptop | Heat, port density | DVFS,standby, Power gating |
+| Networking| Heat, port density| Multi-VDD, Standby, Power gating  |
+| USB| Peak Power | Multi-VDD  |
 
 # Day 2
 
-## Introduction to Low power Design
+## Low Power fundamentals
 ### Definitions 
+The total power dissipations in a CMOS is mainly divided into static power dissipation and dynamic power dissipation given by the below equations, 
+
+ 
+
+### Power distribution during an operation in an SOC mobile processor
+During operation of an application in a mobile phone for ex, various activities are invoked to utilise the hardware resources to perform the function. <br/>
+An example of hardware resources used during a video-call applicaiton in a Mobile processor is shown below, 
+
+<img src="Images/Day_2_2.PNG" width="600"> <br/> 
+
+The arrow with the red line shows the direction of resources that are used during a video call application.<br/>
+The application mostly uses a gsm module, baseband PLL, Mobile video interface, memory control and system cpu.  <br/>
+Some blocks such as serial IOs, DFT, WCDMA are not used during the video call application and hence it can be turned off to conserve power. <br/>
+
+### Power distribution in a laptop under various operation
+The below charts shows the distribution of power consumption under various application and scenraios, <br/> 
+Reference - Power Consumption Breakdown on a Modern Laptop - Aqeel Mahesri and Vibhore Vardhan <br/> 
+
+<img src="Images/Day_2_3a.PNG" width="600"> <br/> 
+
+From the above power analysis it can be seen that the power consumption is greatly depend on the activity in the laptop.<br/> 
+For example PCMark CPU test has the highest power consumption in comparison or Audio CD playback modes. <br/>
+Some more analysis on idle state with dynamic voltage scaling (DVS) in idle mode for different brightness shows that the power in the rest of the laptop system, CPU power and LCD backlight dominates the power distribution chart. 
+
+<img src="Images/Day_2_3.PNG" width="600"> <br/> 
+
+The most important parameters that needs to be consider during balancing the power management and low power design are described below, 
+
+<img src="Images/Day_2_4.PNG" width="500"> <br/> 
+
+| Parameter   | Description |
+|--------------------------------|-----------------------|
+| Density | Divide the blocks into static multiple voltages |
+| Delivery | Shut down logic not in use by placing a switch (power gating transistor) |
+| Leakage  | Variant of power gating that to retain the state | 
+| Reliability | VRET|
+
 
 
 
