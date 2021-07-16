@@ -97,7 +97,7 @@ The specification describe the following
 
 
 3. Case study 3 - Apple iphone 6 battery issues <br/>
-The main reason stated by apple for the slowing down of performance to compensate the degration and lifetime of battery  https://www.theverge.com/2017/12/28/16827248/apple-iphone-battery-replacement-price-slow-down-apology
+The main reason stated by apple for slowing down the performance of iphone 6 was to compensate the degration and lifetime of battery.  https://www.theverge.com/2017/12/28/16827248/apple-iphone-battery-replacement-price-slow-down-apology
 
 
 ## Background
@@ -166,9 +166,10 @@ Some of the multi-voltage control techniques used in various applications are li
 ## Low Power fundamentals
 ### Definitions 
 The total power dissipations in a CMOS is mainly divided into static power dissipation and dynamic power dissipation given by the below equations, <br/> 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" title="Total power = (V_{DD}I_{leak} + C{V_{DD}}^2f_c)" /></a>
+<br/> 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;Total&space;power&space;=&space;(V_{DD}I_{leak}&space;&plus;&space;C{V_{DD}}^2f_c)" title="Total power = (V_{DD}I_{leak} + C{V_{DD}}^2f_c)" /></a> <br/> 
 
-The leakage power is the first part of the sum and the dynamic power is defined by the second part of the sum. <br/> 
+The static power dissipation is the first part of the sum and the dynamic power is defined by the second part of the sum. <br/> 
  
 
 ### Power distribution during an operation in an SOC mobile processor
