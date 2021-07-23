@@ -12,6 +12,14 @@ Table of contents
       * [Low Power fundamentals](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#low-power-fundamentals)
       * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
    
+   * [Day 3](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-3)
+      * [Voltage aware booleans lab](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#low-power-fundamentals)
+      * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
+ 
+   * [Day 4](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-4)
+      * [Voltage aware booleans lab](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-aware-booleans-lab)
+      * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
+   
 <!---   * [Day 3](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-3)
       * [IO placement modification](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
       * [VSD CMOS Inverter Cell](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
@@ -206,5 +214,40 @@ The most important parameters that needs to be consider during balancing the pow
 | Reliability | Reach the constraint to be within material degration limit by electromigration and Average power over time|
 
 ## Voltage Control Techniques
+
+
+
+# Day 4
+
+## Voltage Aware Booleans Lab
+### Lab 1 - Buffer circuit voltage aware tests. 
+The schematic of the buffer circuit used for this test is shown below, <br/>
+
+<img src="Images/Day_4_2a.PNG" width="600"> <br/> 
+
+In this exercise, the voltage of the second inverter V2 is set to 1.8V and the voltage of the first inverter V1 is increased from 0.7V to 1.8V in steps of 0.1V <br/> 
+
+The spice simulation is done using ngspice with the below command, <br/> 
+
+<img src="Images/Day_4_2b.PNG" width="400"> <br/> 
+
+The output obtained from ngspice simulation is shown below, <br/> 
+
+<img src="Images/Day_4_2c.PNG" width="400"> <br/> 
+
+The waveforms for the different voltage nodes V2, In1, V1, Out1, Out2 are shown in the below figure, <br/> 
+
+<img src="Images/Day_4_2d.png" width="400"> <br/> 
+
+From the above excersise, it is seen that voltage level of the first inverter V1 plays an important role in the output obtained Out1.<br/> 
+Until a timestamp of 8ns, the Voltage level V1 of the first inverter is not high enough to obtain a logic high at the output Out1 when the input in1 is low<br/>
+After 8ns the output of the first inverter reach a sufficient voltage level to obtained an output high when the in1 is low. <br/>
+
+
+
+
+
+
+
 
 
