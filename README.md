@@ -12,13 +12,14 @@ Table of contents
       * [Low Power fundamentals](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#low-power-fundamentals)
       * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
    
-   * [Day 3](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-3)
+ <!---  * [Day 3](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-3)
       * [Voltage aware booleans lab](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#low-power-fundamentals)
       * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
+--->
  
    * [Day 4](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#day-4)
       * [Voltage aware booleans lab](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-aware-booleans-lab)
-      * [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)
+      <!---* [Voltage Control techniques](https://github.com/manjunathrv/VSD_Low_power_Design_using_Sky130nm_PDK#voltage-control-techniques-1)-->
    
 <!---   * [Day 3](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#day-3)
       * [IO placement modification](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#vsd-cmos-inverter-cell)
@@ -38,7 +39,7 @@ Table of contents
   
    * [Workshop Learning Outcomes](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#workshop-learning-outcomes)
 
-   * [Acknowledgement](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#acknowledgements)---|>
+   * [Acknowledgement](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#acknowledgements)--->
 
 <!--te-->
 
