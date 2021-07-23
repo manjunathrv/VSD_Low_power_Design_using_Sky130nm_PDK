@@ -143,7 +143,7 @@ The below figure is an example of a CMOS inverter with Voltage nodes that can be
 ### Voltage control techniques
 The various techniques for voltage control in a CMOS IC design are descirbed in the below figure ,
 
-<img src="Images/Day_1_3.PNG" width="600"> <br/> 
+<img src="Images/Day_1_3.PNG"> <br/> 
 
 <br/>
 
@@ -225,19 +225,14 @@ The schematic of the buffer circuit used for this test is shown below, <br/>
 
 <img src="Images/Day_4_2a.PNG" width="600"> <br/> 
 
-The truth table of the ideal buffer circuit with voltage level is tabulated below , <br/>
+The voltage level outputs of the ideal buffer circuit with V1 and V2 = 1.8 is tabulated below - the voltage level 1.8 is HIGH(1) and 0 is LOW(0), <br/>
 
-| IN1   | Concerns  | Mult-Voltage control techniques | 
-|---------|------------|------------|
-| Audio  | Battery life | Power Gating |
-| Video  | Active, Idle | DVFS, Standby, Power Gating |
-| GPS  | Response, Battery life |  Power Gating |
-| W/S. Server | Perfomance, Heat | DVFS, Multi-VDD |
-| Laptop | Heat, port density | DVFS,standby, Power gating |
-| Networking| Heat, port density| Multi-VDD, Standby, Power gating  |
-| USB| Peak Power | Multi-VDD  |
+| IN1   | OUT1  | OUT2 | 
+|-------|------------|------------|
+| 1.8(H)  | 0(L) | 1.8(H)|
+| 0(L)    | 1.8(H)|  0(L)  |
 
-In this exercise, the voltage of the second inverter V2 is set to 1.8V and the voltage of the first inverter V1 is increased from 0.7V to 1.8V in steps of 0.1V <br/> 
+In this exercise, the supply voltage of the second inverter V2 is set to 1.8V and the voltage of the first inverter V1 is increased from 0.7V to 1.8V in steps of 0.1V <br/> 
 
 The spice simulation is done using ngspice with the below command, <br/> 
 
@@ -251,33 +246,32 @@ The waveforms for the different voltage nodes V2, In1, V1, Out1, Out2 are shown 
 
 <img src="Images/Day_4_2d.png" width="600"> <br/> 
 
-From the above excersise, it is seen that voltage level of the first inverter V1 plays an important role in the output obtained Out1.<br/> 
+From the above exercise, it is seen that voltage level of the first inverter V1 plays an important role in the output obtained Out1.<br/> 
 Until a timestamp of 8ns, the Voltage level V1 of the first inverter is not high enough to obtain a logic high at the output Out1 when the input in1 is low<br/>
 After 8ns the output of the first inverter reach a sufficient voltage level to obtained an output high when the in1 is low. <br/>
-
 
 ### Lab 1 - Nand circuit voltage aware tests. 
 The schematic of the NAND circuit used for this test is shown below, <br/>
 
-<img src="Images/Day_4_2a.PNG" width="600"> <br/> 
+<img src="Images/Day_4_3a.PNG" width="600"> <br/> 
 
-In this exercise, the voltage of the second inverter V2 is set to 1.8V and the voltage of the first inverter V1 is increased from 0.7V to 1.8V in steps of 0.1V <br/> 
+The voltage level outputs of the ideal NAND circuit with V1 = 1.8 with inputs V2 and V3 is tabulated below - the voltage level 1.8 is HIGH(1) and 0 is LOW(0), <br/>
 
-The spice simulation is done using ngspice with the below command, <br/> 
+| V2   | V3  | OUT | 
+|-------|------------|------------|
+| 0(L)  | 0(L) | 1.8(H)|
+| 0(L)| 1.8(H) | 1.8(H) |
+| 1.8(H) | 0(L) | 1.8(H)|
+| 1.8(H)| 1.8(H) | 0(L) |
 
-<img src="Images/Day_4_2b.PNG" width="400"> <br/> 
+In this exercise, the supply voltage, input voltage and output voltage are varied in steps of 0.1V <br/> 
 
-The output obtained from ngspice simulation is shown below, <br/> 
+The waveforms for the different voltage nodes V1, V2, V3, Out are shown in the below figure, <br/> 
 
-<img src="Images/Day_4_2c.PNG" width="400"> <br/> 
+<img src="Images/Day_4_3b.png" width="500"> <br/> 
 
-The waveforms for the different voltage nodes V2, In1, V1, Out1, Out2 are shown in the below figure, <br/> 
-
-<img src="Images/Day_4_2d.png" width="500"> <br/> 
-
-From the above excersise, it is seen that voltage level of the first inverter V1 plays an important role in the output obtained Out1.<br/> 
-Until a timestamp of 8ns, the Voltage level V1 of the first inverter is not high enough to obtain a logic high at the output Out1 when the input in1 is low<br/>
-After 8ns the output of the first inverter reach a sufficient voltage level to obtained an output high when the in1 is low. <br/>
+From the above exercise, it is seen that the output voltage level of 1.8V(H) is not reached upto a timestamp of 32ns. <br/>
+The effect of the supply voltage, voltage levels of the input on the actual output can be seen in this lab exercise.
 
 
 
